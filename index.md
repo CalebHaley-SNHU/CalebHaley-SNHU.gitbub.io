@@ -47,9 +47,10 @@ public class ZooMonitoringSystem {
         boolean detailsFound = false;
         
         
-        
+        # While the user does not want to quit...
         while (userInput != 3) {
            
+	   # Print Menu
             System.out.println("Do you want to monitor an animal, habitat, or exit?");
             System.out.println("1. Animal ");
             System.out.println("2. Habitat");
@@ -58,23 +59,31 @@ public class ZooMonitoringSystem {
             userInput = scnr.nextInt();
             System.out.println();
 
+	    # Monitor Animal
             if(userInput == 1){
+	    	# Open the animals file
                 zooFile= new FileInputStream("animals.txt");
                 animalDetails = new Scanner(zooFile);
                 System.out.println("Which animal would you like to monitor?");
                 i = 0;
+		# Keep reading until there is no more
                 while (animalDetails.hasNextLine()){
                     animalLine = animalDetails.nextLine(); 
+		    
+		    # If we find details, display them
                     if(animalLine.contains("Details")){
                         i++;
                         System.out.println(i + ". " + animalLine);
                     }
                 }
+		# Close the file
                 zooFile.close();
                 
+		# Get user inputs
                 System.out.print("Enter your selection: ");
                 detailsInput = scnr.nextInt();
                 System.out.println();
+		#Open animals file
                 zooFile= new FileInputStream("animals.txt");
                 animalSubDetails = new Scanner(zooFile);
                 i = 0;
@@ -83,6 +92,8 @@ public class ZooMonitoringSystem {
                     if(animalLine.contains("Animal")){
                         i++;
                     }
+		    
+		    # If we get an urgent message, let the user know
                     if (i == detailsInput){
                         detailsFound = true;
                         if(animalLine.contains("*****")){
@@ -98,6 +109,7 @@ public class ZooMonitoringSystem {
                             }
                             System.out.println();
                         }
+			# No warning, keep going
                         else if(!animalLine.isEmpty()){
                             System.out.println(animalLine);
                         } 
@@ -111,11 +123,14 @@ public class ZooMonitoringSystem {
                 System.out.println(); 
             }
             
+	    # Habitats Selection
             else if(userInput == 2){
+	   	# Open file
                 zooFile= new FileInputStream("habitats.txt");
                 habitatDetails = new Scanner(zooFile);
                 System.out.println("Which habitat would you like to monitor?");
                 i = 0;
+		# Keep reading the next lines until there are no more
                 while (habitatDetails.hasNextLine()){
                     habitatLine = habitatDetails.nextLine(); 
                     if(habitatLine.contains("Details")){
@@ -124,10 +139,14 @@ public class ZooMonitoringSystem {
                     }
                     
                 }
+		# Close flie
                 zooFile.close();
+		
+		# Get input
                 System.out.print("Enter your selection: ");
                 detailsInput = scnr.nextInt();
                 System.out.println();
+		# Open file 
                 zooFile= new FileInputStream("habitats.txt");
                 habitatSubDetails = new Scanner(zooFile);
                 i = 0;
@@ -136,6 +155,8 @@ public class ZooMonitoringSystem {
                     if(habitatLine.contains("Habitat")){
                         i++;
                     }
+		    
+		    # Alert user on warnings
                     if (i == detailsInput){
                         detailsFound = true;
                         if(habitatLine.contains("*****")){
