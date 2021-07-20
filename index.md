@@ -8,18 +8,12 @@ I grew up as a computer nerd, anything that was computer related I was intereste
 
 I originally had trouble thinking of projects to use to help hone my abilities and skills in software development, so I went back through applications that I had made in school and re-wrote them in other languages and repurposed some.  Once I started approaching regular problems different and asking myself how a program could make the problem less burdensome, I found that I have too many project ideas.  A program I am currently working on is a simple Java swing frame program that can be used to take the current lumber price per thousand and reprice a user's current stock of product.  I currently work in the lumber industry and calculating this takes me about an hour or two per week of redundant math, just sitting with a calculator converting board feet to lineal feet.  Why not let the computer do the computing? 
 
-Some languages that I am confident and comfortable with are: Java, Python
+Some languages that I am confident and comfortable with are: Java, Python.
+
 Some languages I have limited experience with are: C#, C++, MySQL, .NET, HTML, CSS 
 
 
-I used my experience in retail to help refine the narratives to be applicable in the real world.  For example, the first narrative reads data from a file and performs operations on the data.  This would allow a retailer to find out how many tons of pellets to order based on ash content, heat rating, and price.  Since these are three major variables in customer sales, we can use them to estimate the sales with a fair amount of accuracy.  The second narrative tells the user how much of a certain item they need to order.  The original program would ask the user for how many items they have and how many they need and perform arithmetic on those items.  Most point-of-sale systems have breakpoints for orders set by managers, if stock gets to a certain point, then more would need to be ordered and the item is flagged.  In the revised program, I took previous years sales data used how many of the item the user has on hand and simply asked the user for how much of the item they have and gave them how many they needed to order.  Lastly, the third narrative dives into aliases or SKUs in the business world.  I created a database that contained abbreviations, those abbreviations could hold product details which we could read into by querying the database.  When someone at a store scans an item, the barcode does not contain the data, but it contains a link to the data.  This is an applicable skill for most point-of-sale development.
-
-
-
-
-## Enhancement 1 Narrative: Software Design and Engineering
-
-**A.	Briefly describe the artifact. What is it? When was it created?**
+**Briefly describe the program. What is it? When was it created?**
 
 The original program was created in IT-145 and it was a Zoo Monitoring System which was written in Java.  The program would output a menu for the user to select an option on what they wanted to monitor, and the program would read a text file and give the data to the user.  I decided to re-write the program in Python and read JSON files.  I had a JSON file containing some pellet data from work that I repurposed for the program.  This program now outputs a menu for the user to select an option on what they want to monitor, and the program reads a JSON file and gives the data to the user.  The major differences are that rather than spitting out whatever is in the text file, this program finds the data the user is looking for all from within one file.
 
@@ -308,9 +302,8 @@ while programRunning:
 
 ```
 
-## Enhancement 2 Narrative: Algorithms and Data Structure
+**Briefly describe the program. What is it? When was it created?**
 
-**A.	Briefly describe the artifact. What is it? When was it created?**
 
 The original program was created in IT-145 and it was a system that would ask the user how many apples and oranges they had, and how many they are required to have, then calculate the difference.  I wanted to make the program easier to use for the end-user so I put data into a hash table which contained previous years sales, then the program would ask the user what they would want to calculate and prompt the user for how many of an item they have, then get the last year’s sales data and compare the two numbers.
 
